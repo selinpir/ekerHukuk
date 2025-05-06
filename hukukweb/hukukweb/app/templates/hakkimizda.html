@@ -1,0 +1,393 @@
+{%load static %}
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eker Hukuk | Hukuk Danışmanlığı |Sibel Eker</title>
+    <meta name="description" content="Çanakkale'de uzman avukat Sibel Eker ile ???????????????????? Hukuku alanlarında danışmanlık ve dava desteği sunuyoruz. Hemen iletişime geçin!">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- Font Awesome ikonları için -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    
+  </head> 
+</body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top border-bottom border-secondary">
+      <div class="container-fluid">
+        
+        <a class="navbar-brand d-flex align-items-center" href="#" style="font-family: 'Playfair Display', serif;">
+          <img src="{% static 'img/ekerhukuklogo.png' %}" alt="Eker Hukuk" class="d-inline-block align-top" style="height: 85px;"> 
+          <span class="ms-2 d-none d-lg-inline-block" style="font-size: 1.4rem; background: linear-gradient(90deg, #fff, #aaa); -webkit-background-clip: text; background-clip: text; color: transparent;">Eker Hukuk</span>
+          <span class="ms-2 d-lg-none" style="font-size: 1.2rem;">Eker Hukuk</span>
+        </a>
+    
+        <!-- Mobil Menü Butonu -->
+        <button class="navbar-toggler border-0 py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobilMenu" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- Masaüstü Menü -->
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-lg-1"><a class="nav-link position-relative px-3 py-2 active" href="{% url 'anasayfa' %}">Anasayfa<span class="nav-hover"></span></a></li>
+            <li class="nav-item mx-lg-1"><a class="nav-link position-relative px-3 py-2" href="{% url 'hakkimizda' %}">Hakkımızda<span class="nav-hover"></span></a></li>
+            <li class="nav-item mx-lg-1"><a class="nav-link position-relative px-3 py-2" href="{% url 'hizmetler' %}">Faaliyet Alanlarımız<span class="nav-hover"></span></a></li>
+            <li class="nav-item mx-lg-1"><a class="nav-link position-relative px-3 py-2" href="{% url 'iletisim' %}">İletişim<span class="nav-hover"></span></a></li>
+            <li class="nav-item mx-lg-1"><a class="nav-link position-relative px-3 py-2" href="{% url 'blog' %}">Blog<span class="nav-hover"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- MOBİL MENÜ (Offcanvas) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobilMenu">
+      <div class="offcanvas-header border-bottom border-secondary">
+        <div class="d-flex align-items-center">
+          <img src="{% static 'img/ekerhukuklogo.png' %}" alt="Logo" style="height: 45px;">
+          <h5 class="offcanvas-title ms-3 mb-0" style="font-family: 'Playfair Display', serif; font-size: 1.4rem;">Eker Hukuk</h5>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body px-4">
+        <ul class="navbar-nav">
+          <li class="nav-item border-bottom border-secondary py-2"><a class="nav-link fs-5 py-3" href="{% url 'anasayfa' %}">Anasayfa</a></li>
+          <li class="nav-item border-bottom border-secondary py-2"><a class="nav-link fs-5 py-3" href="{% url 'hakkimizda' %}">Hakkımızda</a></li>
+          <li class="nav-item border-bottom border-secondary py-2"><a class="nav-link fs-5 py-3" href="{% url 'hizmetler' %}">Faaliyet Alanlarımız</a></li>
+          <li class="nav-item border-bottom border-secondary py-2"><a class="nav-link fs-5 py-3" href="{% url 'iletisim' %}">İletişim</a></li>
+          <li class="nav-item py-2"><a class="nav-link fs-5 py-3" href="{% url 'blog' %}">Blog</a></li>
+        </ul>
+        
+        <!-- Sosyal Medya İkonları  -->
+        <div class="mt-4 pt-3 text-center">
+          <a href="https://www.instagram.com/ekerhukuk" class="text-white mx-2 fs-4"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/ekerhukuk" class="text-white mx-2 fs-4"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white mx-2 fs-4"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+<!--slider-->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3000">
+          <img src="{% static 'img/img3.jpg' %}" class="d-block w-100 carousel-img" alt="Hukuk Kitapları ve hukuk masası">            <!-- Optional captions (commented out) -->
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'img/img2.jpg' %}" class="d-block w-100 carousel-img" alt="Adalet Terazisi - Hukuk ve Danışmanlık">         
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3000">
+          <img src="{% static 'img/img1.jpg' %}" class="d-block w-100 carousel-img" alt="Hukuki Çözüm ve Destek">          
+      </div>
+  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">önceki</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">sonraki</span>
+    </button>
+</div>
+<br>
+<br>
+
+ <!-- 
+<section id="hakkimizda">
+  <div class="container mx-auto my-4 px-4 "> 
+  </section>
+</div>
+-->
+
+<section id="hakkimizda">
+  <div class="container mx-auto my-4 px-4">
+    <div class="row">
+      
+      <!-- Scrollspy Navbar -->
+      <div class="col-md-3 mb-4">
+        <nav id="navbar-example3" class="navbar navbar-light flex-column align-items-stretch p-3">
+          <a class="navbar-brand" href="#">Hakkımızda</a>
+          <nav class="nav nav-pills flex-column">
+            <a class="nav-link" href="#avukat">Kadromuz</a>
+            <a class="nav-link" href="#vizyon">Vizyon</a>
+            <a class="nav-link" href="#misyon">Misyon</a>
+            <a class="nav-link" href="#baro">Baro Üyeliklerimiz</a>
+            <a class="nav-link" href="#basin">Basında Biz</a>
+          </nav>
+        </nav>
+      </div>
+
+      <!-- İçerik -->
+      <div class="col-md-9" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="100" tabindex="0">
+        <h4 id="avukat">Kadromuz</h4>
+            {% for avukat in avukatlar %}
+            <div class="mb-3">
+            <h5>{{ avukat.ad_soyad }}</h5>
+            <p>{{ avukat.biyografi }}</p>
+          </div>
+        {% endfor %}
+      <!-- Vizyon & Misyon -->
+      <h4 id="vizyon">Vizyon</h4>
+      {% if vizyon_misyon %}
+          <p>{{ vizyon_misyon.vizyon }}</p>
+      {% else %}
+          <p class="text-danger">Vizyon verisi bulunamadı</p>
+      {% endif %}
+
+      <h4 id="misyon">Misyon</h4>
+      {% if vizyon_misyon %}
+          <p>{{ vizyon_misyon.misyon }}</p>
+      {% else %}
+          <p class="text-danger">Misyon verisi bulunamadı</p>
+      {% endif %}
+
+      <h4 id="baro">Baro Üyeliklerimiz</h4>
+      <div class="row">
+          <!-- Baro 1 -->
+            <!--
+          <div class="col-md-4 mb-3">
+              <div class="card">
+                  <img src="path_to_logo1.jpg" class="card-img-top" alt="Baro 1 Açıklaması" style="max-width:100px; margin: 0 auto;">
+                  <div class="card-body text-center">
+                      <p class="card-text">Baro 1 Açıklaması</p>
+                  </div>
+              </div>
+          </div>
+           -->
+
+          <!-- Baro 2 -->
+          
+          <div class="col-md-4 mb-3">
+              <div class="card">
+                  <img src="{% static 'img/canakkaleburosu.jpg' %}" class="card-img-top" alt="Çanakkale Barosu- Eker Hukuk" style="max-width:100px; margin: 0 auto;">
+                  <div class="card-body text-center">
+                      <p class="card-text">Çanakkale Barosu</p>
+                  </div>
+              </div>
+          </div>
+    
+          <!-- Baro 3 -->
+           <!--
+          <div class="col-md-4 mb-3">
+              <div class="card">
+                  <img src="path_to_logo3.jpg" class="card-img-top" alt="Baro 3 Açıklaması" style="max-width:100px; margin: 0 auto;">
+                  <div class="card-body text-center">
+                      <p class="card-text">Baro 3 Açıklaması</p>
+                  </div>
+              </div>
+          </div>
+        -->
+      </div> 
+
+      <!-- Basında Biz -->
+      <h4 id="basin">Basında Biz</h4>
+      {% for haber in basinda_biz %}
+      <div class="mb-3">
+          <h5>{{ haber.baslik }}</h5>
+          {% if haber.image %}
+          <img src="{{ haber.image.url }}" alt="Haber resmi" style="max-width:200px;">
+          {% endif %}
+          <p><a href="{{ haber.link }}" target="_blank">Haberi Gör</a></p>
+      </div>
+      {% empty %}
+      <p class="text-danger">Basında biz bilgisi bulunamadı</p>
+      {% endfor %}       
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Toast baslangıç-->
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
+    <div class="toast-header">
+      <strong class="me-auto">Eker Hukuk</strong>
+      <small>Hoşgeldiniz</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Merhaba! Size yardımcı olabileceğimiz bir konu var mı? 
+      <div class="mt-2 d-flex justify-content-start">
+        <!-- Avukata Ulaş butonu -->
+        <button class="btn btn-primary me-2" onclick="avukataUlas()">Avukata ulaşmak istiyorum.</button>
+        <!-- Şu an sadece bakıyorum butonu -->
+        <button class="btn btn-secondary" onclick="sadeceBakiyorum()">Şu an sadece bakıyorum.</button>
+      </div>
+    </div>
+  </div>
+  <!-- Toast son-->
+<br>
+<br>
+<br>
+<br>
+<br>
+</section>
+  <!--  Çanakkale boşanma avukatı  
+  ticaret hukuku danışmanlık  
+  iş hukuku avukatı Çanakkale  
+  hukuk danışmanlığı fiyatları  -->
+<!-- footer -->
+<footer class="text-white text-center text-lg-start" style="background-color: #0D1B2A;">
+    <div class="container p-4">
+      <div class="row">
+        <!-- Birinci Sütun -->
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-4"> <!-- mb-md-4 yaptık -->
+          <h5 class="text-uppercase mb-3">Eker Hukuk</h5>  
+          <p class="small mb-0" style="text-align: justify;">
+            Bu sitede bulunan her türlü bilgi, yazı ve yapılan açıklamalar bilgilendirme amaçlıdır. Reklam amacı taşımaz. Bu nedenle, haksız rekabet yaratıldığı şeklinde algılanmamalı ve yorumlanmamalıdır. Ziyaretçiler ve Müvekkillerin, Sitede yayımda olan bilgiler nedeniyle zarara uğradıkları iddiası bakımından Hukuk Büromuz herhangi bir sorumluluk kabul etmemektedir.
+          </p>
+        </div>
+  
+        <!-- İkinci Sütun -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-4"> <!-- mb-md-4 yaptık -->
+          <h5 class="text-uppercase mb-3">Faydalı Linkler</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="https://www.barobirlik.org.tr/" class="text-white d-block text-start">Türkiye Barolar Birliği</a>
+            </li>
+            <li class="mb-2">
+              <a href="https://www.yargitay.gov.tr/" class="text-white d-block text-start">Yargıtay</a>
+            </li>
+            <li class="mb-2">
+              <a href="https://danistay.gov.tr/" class="text-white d-block text-start">Danıştay</a>
+            </li>
+            <li class="mb-2">
+              <a href="https://turkiye.gov.tr/" class="text-white d-block text-start">E-Devlet</a>
+            </li>
+            <li>
+              <a href="https://resmigazete.gov.tr/" class="text-white d-block text-start">Resmi Gazete</a>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- Üçüncü Sütun -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-3">İletişim</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2 d-flex align-items-start">
+              <i class="fas fa-map-marker-alt me-2 mt-1"></i>
+              <span>Adres: Örnek Mah. No:1, İstanbul</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="fas fa-phone me-2"></i>
+              <a href="tel:+902121234567" class="text-white text-decoration-none">0 (212) 123 45 67</a>
+            </li>
+            <li class="mb-2 d-flex align-items-center">
+              <i class="fas fa-envelope me-2"></i>
+              <a href="mailto:info@ekerhukuk.com" class="text-white text-decoration-none">info@ekerhukuk.com</a>
+            </li>
+            <li class="mb-4 d-flex align-items-center">
+              <i class="fas fa-clock me-2"></i>
+              <span>Çalışma Saatleri: 09:00 - 18:00</span>
+            </li>
+            <div class="mt-4 pt-3 text-center">
+              <a href="https://www.instagram.com/ekerhukuk" class="text-white mx-2 fs-4"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/ekerhukuk" class="text-white mx-2 fs-4"><i class="fab fa-linkedin"></i></a>
+              <a href="#" class="text-white mx-2 fs-4"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.3);">
+      <p class="m-0">
+        © 2025 Eker Hukuk | Tüm Hakları Saklıdır.<br class="d-block d-md-none">
+        Web Yazılım & Tasarım: <strong>Selin Pir</strong>
+      </p>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-wEme7rBv5Zc6MzZHeCq16d5r5MEfC4kXr7dKb3VAY6a8lbz9FPH8iMc7vXyfF7FE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--SSS script-->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const questions = document.querySelectorAll(".faq-question");
+  
+      questions.forEach(button => {
+          button.addEventListener("click", () => {
+              const answer = button.nextElementSibling;
+              
+              // Diğer açık olanları kapat
+              questions.forEach(btn => {
+                  if (btn !== button) {
+                      btn.classList.remove("active");
+                      btn.nextElementSibling.style.maxHeight = null;
+                  }
+              });
+  
+              // Seçilen aç-kapa
+              button.classList.toggle("active");
+  
+              if (answer.style.maxHeight) {
+                  answer.style.maxHeight = null;
+              } else {
+                  answer.style.maxHeight = answer.scrollHeight + "px";
+              }
+          });
+      });
+  });
+  </script>
+  
+  <!-- Toast baslangıç-->
+  <script>
+    // Sayfa yüklendiğinde otomatik olarak Toast gösterilecek
+    document.addEventListener('DOMContentLoaded', function() {
+      var toastEl = document.querySelector('.toast');
+      var toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    });
+
+    function avukataUlas() {
+      window.location.href = '/avukat-formu'; 
+    }
+
+    function sadeceBakiyorum() {
+      var toastEl = document.querySelector('.toast');
+      var toast = bootstrap.Toast.getInstance(toastEl); 
+      toast.hide(); // Toast'ı gizle
+    }
+  </script>
+  <!-- Toast son-->
+</body>
+</html>

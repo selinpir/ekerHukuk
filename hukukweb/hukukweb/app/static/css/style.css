@@ -1,0 +1,292 @@
+/*NAVBAR*/
+.navbar {
+    padding: 0.5rem 1rem;
+    background-color: #0D1B2A !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    color: white !important;
+    transition: all 0.3s ease; /*logo için animasyon*/
+}
+
+.navbar-brand:hover {
+    transform: scale(1.03);
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    position: relative; /*Elementi normalde olması gerektiği yerde konumlandırır*/
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute; /*Element normal akışta yer kaplamaz, diğer elementler onu yok sayar*/
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
+.nav-item.active .nav-link::after {
+    width: 60% !important;
+}
+
+/*mobil*/
+.offcanvas {
+    width: 250px;
+    background-color: #0D1B2A !important;
+}
+
+.offcanvas-body .nav-link {
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 1.5rem !important;
+    color: white !important;
+}
+
+.offcanvas-body .nav-link::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #6a11cb;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.offcanvas-body .nav-link:hover {
+    padding-left: 2.5rem !important;
+    color: #fff !important;
+}
+
+.offcanvas-body .nav-link:hover::before {
+    opacity: 1;
+    left: 0.5rem;
+}
+
+.navbar-toggler {
+    transition: all 0.3s;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.5);
+}
+/*responsive*/
+@media (max-width: 991.98px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .navbar-logo {
+        height: 100px;
+    }
+    
+    .navbar-logo-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .offcanvas .nav-link {
+        font-size: 1.1rem !important;
+        padding: 0.75rem 1rem !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-item {
+        display: inline-block;
+    }
+}
+
+/*slider için*/
+.carousel-img {
+    height: 500px;  
+    width:90%;   
+    object-fit: cover; 
+    object-position: center; 
+}
+
+/*HAKKIMIZDA KISMI*/
+.nav-pills .nav-link.active {
+    background: transparent;
+    color:#0D1B2A !important; 
+    font-weight: bold;
+}
+
+#navbar-example3 .navbar-brand {
+    color: #000 !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#navbar-example3 {
+    background-color: #d5dde6 !important;  
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#navbar-example3 .nav-link {
+    color: #0D1B2A !important;  
+}
+
+/*#navbar-example3 .nav-link.active {
+    background-color: transparent;
+    color: #0D1B2A !important;  
+    font-weight: bold;
+}*/
+
+#navbar-example3 .nav-link.active {
+    position: relative;
+    background-color: transparent;
+    color: #0D1B2A !important;
+    font-weight: bold;
+}
+
+#navbar-example3 .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background: linear-gradient(180deg, #6a11cb, #2575fc); /* Temana uygun mor-mavi */
+    border-radius: 4px;
+}
+
+#navbar-example3 {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Hakkımızda bölümündeki h4 etiketleri için stil */
+#hakkimizda h4 {
+    font-size: 1.8rem; /* Başlık boyutu */
+    font-weight: bold; /* Kalın yazı */
+    color: #3c3c3c; /* Başlık rengi */
+    margin-bottom: 20px; /* Başlık altına boşluk */
+  
+    text-transform: uppercase; /* Başlıkları büyük harf yapar */
+    letter-spacing: 1px; /* Harfler arasına boşluk ekler */
+}
+
+/* Hakkımızda bölümündeki h5 etiketleri için stil */
+#hakkimizda h5 {
+    font-size: 1.6rem; /* Alt başlık boyutu */
+    font-weight: normal; /* Normal yazı kalınlığı */
+    color: #5a5a5a; /* Alt başlık rengi */
+    margin-bottom: 10px; /* Alt başlık altına boşluk */
+    text-transform: capitalize; /* İlk harfleri büyük yapar */
+}
+
+/* Hakkımızda bölümündeki p etiketleri için stil */
+#hakkimizda p {
+    font-size: 1rem; /* Paragraf yazı boyutu */
+    color: #333; /* Paragraf metni rengi */
+    line-height: 1.6; /* Satır yüksekliği */
+    margin-bottom: 15px; /* Paragraflar arası boşluk */
+    text-align: justify; /* Paragrafı iki yana yaslar */
+}
+
+/* Hakkımızda bölümündeki Kadro, Vizyon, Misyon başlıklarının arasındaki stil */
+#hakkimizda #avukat, 
+#hakkimizda #vizyon, 
+#hakkimizda #misyon {
+    padding-top: 30px; /* Başlıklar arasında boşluk bırakır */
+    padding-bottom: 10px; /* Başlıklar arasındaki boşluk */
+}
+
+/* Vizyon & Misyon paragrafları için Hakkımızda bölümünde ek stil */
+#hakkimizda #vizyon p, 
+#hakkimizda #misyon p {
+    font-style: italic; /* İtalik yapar */
+    color: #777; /* Farklı bir renk verir */
+}
+
+/* Hakkımızda bölümündeki Barolar açıklamaları için stil */
+#hakkimizda #baro p {
+    font-size: 1.1rem; /* Barolar açıklama yazısı büyüklüğü */
+    color: #4f4f4f; /* Açıklama rengi */
+    text-align: center; /* Ortalar */
+}
+#basin {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #5D3FD3; /* Başlık için renk */
+}
+
+#basin h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+#basin .mb-3 {
+    border: 1px solid #ddd; /* Gri bir kenarlık */
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#basin .mb-3:hover {
+    transform: translateY(-5px); /* Hover efekti */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gölgeleme efekti */
+}
+
+#basin img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#basin a {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #5D3FD3;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #5D3FD3;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#basin a:hover {
+    background-color: #5D3FD3;
+    color: #fff;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;  /* Yatayda ortalar */
+    align-items: center;      /* Dikeyde ortalar */
+    height: 100%;             /* Card'ın yüksekliği kadar alanı kaplar */
+}
