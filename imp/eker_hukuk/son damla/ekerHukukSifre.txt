@@ -1,0 +1,11 @@
+gmail:
+mail: ekerhukuk@gmail.com
+şifre : yağmurun elleri
+
+django için :
+admin name: adminsibel2025
+sifre : yağmurunelleri
+
+admin 2 : adminselin2025
+sifre : yağmurunelleri
+algorithm: pbkdf2_sha256 iterations: 870000 salt: siYrLw**************** hash: gFXvEq**************************************
